@@ -52,5 +52,5 @@ dev-repo: "git+https://github.com/mirage/mirage-crypto.git"
 tags: ["org:mirage"]
 x-maintenance-intent: [ "(latest)" ]
 url {
-  src: "git+file:///Users/yev/Development/solo5-mac/mirage-crypto#807e5c92367c1b19a5094f1077887b843370aead"
+  src: "git+file:///Users/yev/Development/solo5-mac/mirage-crypto#864cf6fb18878deaca6c8d74332b75526fb20110"
 }

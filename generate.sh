@@ -23,7 +23,7 @@ solo5|0.13.0|2|opam/solo5.opam
 ocaml-solo5|1.3.4|1|ocaml-solo5.opam
 mirage|4.11.2|1|mirage.opam mirage-runtime.opam
 ocaml-gmp|6.3.0-1|1|gmp.opam
-mirage-crypto|2.4.1|2|mirage-crypto.opam mirage-crypto-rng.opam mirage-crypto-rng-mirage.opam mirage-crypto-rng-mkernel.opam mirage-crypto-pk.opam mirage-crypto-ec.opam
+mirage-crypto|2.4.1|3|mirage-crypto.opam mirage-crypto-rng.opam mirage-crypto-rng-mirage.opam mirage-crypto-rng-mkernel.opam mirage-crypto-pk.opam mirage-crypto-ec.opam
 "
 
 rm -rf packages
