@@ -3,7 +3,8 @@
 # Regenerate this opam repository from the forks.
 #
 # Each fork's opam files are copied in as <name>.<upstream version>+hvf.<N>,
-# with a url pointing at the fork's current commit. Run it after committing
+# with a url pointing at the fork's current commit. Bump a fork's N when its
+# commits change what gets installed, so that opam upgrades it. Run it after committing
 # to any fork, then `opam update hvf-mac`.
 #
 # FORKS_DIR    directory holding the fork checkouts (default: ..)
@@ -15,21 +16,20 @@ set -eu
 cd "$(dirname "$0")"
 FORKS_DIR="$(cd "${FORKS_DIR:-..}" && pwd)"
 FORKS_URL="${FORKS_URL:-git+file://${FORKS_DIR}/}"
-HVF_REV=1
 
-# fork directory | upstream version | opam files (relative to the fork)
+# fork directory | upstream version | N | opam files (relative to the fork)
 FORKS="
-solo5|0.13.0|opam/solo5.opam
-ocaml-solo5|1.3.4|ocaml-solo5.opam
-mirage|4.11.2|mirage.opam mirage-runtime.opam
-ocaml-gmp|6.3.0-1|gmp.opam
-mirage-crypto|2.4.1|mirage-crypto.opam mirage-crypto-rng.opam mirage-crypto-rng-mirage.opam mirage-crypto-rng-mkernel.opam mirage-crypto-pk.opam mirage-crypto-ec.opam
+solo5|0.13.0|2|opam/solo5.opam
+ocaml-solo5|1.3.4|1|ocaml-solo5.opam
+mirage|4.11.2|1|mirage.opam mirage-runtime.opam
+ocaml-gmp|6.3.0-1|1|gmp.opam
+mirage-crypto|2.4.1|2|mirage-crypto.opam mirage-crypto-rng.opam mirage-crypto-rng-mirage.opam mirage-crypto-rng-mkernel.opam mirage-crypto-pk.opam mirage-crypto-ec.opam
 "
 
 rm -rf packages
 printf 'opam-version: "2.0"\n' > repo
 
-echo "${FORKS}" | while IFS='|' read -r fork version files; do
+echo "${FORKS}" | while IFS='|' read -r fork version rev files; do
     [ -n "${fork}" ] || continue
     commit="$(git -C "${FORKS_DIR}/${fork}" rev-parse HEAD)"
     if [ -n "$(git -C "${FORKS_DIR}/${fork}" status --porcelain \
@@ -38,7 +38,7 @@ echo "${FORKS}" | while IFS='|' read -r fork version files; do
     fi
     for f in ${files}; do
         name="$(basename "${f}" .opam)"
-        dir="packages/${name}/${name}.${version}+hvf.${HVF_REV}"
+        dir="packages/${name}/${name}.${version}+hvf.${rev}"
         mkdir -p "${dir}"
         # Drop fields that only make sense in a source tree.
         grep -v '^version:' "${FORKS_DIR}/${fork}/${f}" > "${dir}/opam"
