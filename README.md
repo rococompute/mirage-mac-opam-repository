@@ -19,6 +19,10 @@ of the checkout location. Commit fork changes before regenerating; metadata is
 read from each pinned commit, and package revisions must increase when installed
 contents change.
 
+The fork repositories currently require GitHub repository access. Git must be
+authenticated for their HTTPS URLs, including when opam fetches sources; for
+example, run `gh auth login` and `gh auth setup-git` first.
+
 ## Use
 
 ```sh
