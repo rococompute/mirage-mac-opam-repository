@@ -54,5 +54,5 @@ run MirageOS unikernels on the host system.
 x-maintenance-intent: [ "(latest)" ]
 x-ci-accept-failures: [ "centos-7" "opensuse-15.6" ] # too old GCC compiler (OpenSUSE uses GCC 7 and we require GCC 10)
 url {
-  src: "git+file:///Users/yev/Development/solo5-mac/solo5#85e0dd49158fdcad94f9628f40dd7e63d8009420"
+  src: "git+https://github.com/rococompute/solo5#408abdf086f25ad92bb8c9117e150e9dd5d4619e"
 }

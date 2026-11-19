@@ -26,5 +26,5 @@ synopsis: "The GNU Multiple Precision Arithmetic Library"
 description: """Dune packaging of the GMP library, suitable for 
 cross-compilation."""
 url {
-  src: "git+file:///Users/yev/Development/solo5-mac/ocaml-gmp#98a2dfe70a6146ec6b6a9c51e777f6a7d5db5015"
+  src: "git+https://github.com/rococompute/ocaml-gmp#98a2dfe70a6146ec6b6a9c51e777f6a7d5db5015"
 }

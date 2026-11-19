@@ -57,5 +57,5 @@ synopsis: "OCaml cross-compiler to the freestanding Solo5 backend"
 description:
   "This package provides a OCaml cross-compiler, suitable for linking with a Solo5 unikernel."
 url {
-  src: "git+file:///Users/yev/Development/solo5-mac/ocaml-solo5#0edf1f7591994f126ada341185a6c44c847e0385"
+  src: "git+https://github.com/rococompute/ocaml-solo5#fbc1a97930b9df22974fca124d68131ce79be315"
 }
