@@ -36,5 +36,5 @@ A bundle of useful runtime functions for applications built with MirageOS
 """
 x-maintenance-intent: [ "(latest)" ]
 url {
-  src: "git+https://github.com/rococompute/mirage#74d1e3bd53c542b2278b7b961005bd5d132d02c0"
+  src: "git+https://github.com/rococompute/mirage#263caf03fb448553276a2f0e0d282f978bc9fc56"
 }
