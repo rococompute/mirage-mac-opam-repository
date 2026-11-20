@@ -20,9 +20,9 @@ case "${FORKS_URL}" in */) ;; *) echo "FORKS_URL must end in /" >&2; exit 2 ;; e
 
 # fork directory | upstream version | N | opam files (relative to the fork)
 FORKS="
-solo5|0.13.0|3|opam/solo5.opam
+solo5|0.13.0|4|opam/solo5.opam
 ocaml-solo5|1.3.4|2|ocaml-solo5.opam
-mirage|4.11.2|1|mirage.opam mirage-runtime.opam
+mirage|4.11.2|2|mirage.opam mirage-runtime.opam
 ocaml-gmp|6.3.0-1|1|gmp.opam
 mirage-crypto|2.4.1|4|mirage-crypto.opam mirage-crypto-rng.opam mirage-crypto-rng-mirage.opam mirage-crypto-rng-mkernel.opam mirage-crypto-pk.opam mirage-crypto-ec.opam
 "

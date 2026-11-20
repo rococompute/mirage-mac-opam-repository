@@ -6,9 +6,9 @@ running on Hypervisor.framework.
 
 | Package | Version | Why it is forked |
 | --- | --- | --- |
-| `solo5` | 0.13.0+hvf.N | HVF backend for `solo5-hvt`, sandbox, macOS toolchain |
+| `solo5` | 0.13.0+hvf.N | HVF backend for `solo5-hvt`, sandbox, macOS toolchain; user memory (`USER_MEMORY`) and `-z solo5-text-start` |
 | `ocaml-solo5` | 1.3.4+hvf.N | builds on a macOS host; OCaml 5.5.2 patches |
-| `mirage`, `mirage-runtime` | 4.11.2+hvf.N | accept solo5 0.13 |
+| `mirage`, `mirage-runtime` | 4.11.2+hvf.N | accept solo5 0.13; `register ~user_memory ~text_start` for hvt |
 | `mirage-crypto*` | 2.4.1+hvf.N | entropy self-test on 24 MHz ARM timers |
 | `gmp` | 6.3.0-1+hvf.N | build with LLVM binutils and as a macOS host library |
 

@@ -54,5 +54,5 @@ securely and with finer control than with a full software stack.
 """
 x-maintenance-intent: [ "(latest)" ]
 url {
-  src: "git+https://github.com/rococompute/mirage#0f626487f9b234b5ae5f09c1b4384a8d431a2ec9"
+  src: "git+https://github.com/rococompute/mirage#74d1e3bd53c542b2278b7b961005bd5d132d02c0"
 }
