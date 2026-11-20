@@ -25,6 +25,7 @@ ocaml-solo5|1.3.4|2|ocaml-solo5.opam
 mirage|4.11.2|2|mirage.opam mirage-runtime.opam
 ocaml-gmp|6.3.0-1|1|gmp.opam
 mirage-crypto|2.4.1|4|mirage-crypto.opam mirage-crypto-rng.opam mirage-crypto-rng-mirage.opam mirage-crypto-rng-mkernel.opam mirage-crypto-pk.opam mirage-crypto-ec.opam
+opam-monorepo|0.5.0|1|opam-monorepo.opam
 "
 
 stage="$(mktemp -d .generate.XXXXXX)"

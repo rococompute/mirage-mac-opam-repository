@@ -14,6 +14,7 @@ SOURCES = {
     'mirage': ['mirage.opam', 'mirage-runtime.opam'],
     'ocaml-gmp': ['gmp.opam'],
     'mirage-crypto': [f'{name}.opam' for name in ('mirage-crypto', 'mirage-crypto-rng', 'mirage-crypto-rng-mirage', 'mirage-crypto-rng-mkernel', 'mirage-crypto-pk', 'mirage-crypto-ec')],
+    'opam-monorepo': ['opam-monorepo.opam'],
 }
 
 def digest(root):
@@ -44,7 +45,7 @@ with tempfile.TemporaryDirectory(prefix='overlay-test-') as tmp:
     assert result.returncode == 0, result.stdout
     packages = overlay / 'packages'
     opams = sorted(packages.rglob('opam'))
-    assert len(opams) == 11, len(opams)
+    assert len(opams) == sum(map(len, SOURCES.values())), len(opams)
     for opam in opams:
         text = opam.read_text()
         assert 'src: "git+https://github.com/rococompute/' in text, text
